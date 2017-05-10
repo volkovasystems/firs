@@ -1,0 +1,48 @@
+{
+  "name": "firs",
+  "version": "0.0.0",
+  "description": "Get the first non-falsy element of array.",
+  "main": "firs.js",
+  "support": "firs.support.js",
+  "deploy": "firs.deploy.js",
+  "browser": "firs.deploy.js",
+  "scripts": {
+    "build": "babel firs.js --out-file firs.support.js --source-maps && webpack --progress --display-modules",
+    "test": "mocha firs-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/firs.git"
+  },
+  "keywords": [
+    "get",
+    "first",
+    "non-falsy",
+    "element",
+    "array",
+    "firs"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/firs/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/firs#readme",
+  "dependencies": {
+    "arid": "^0.25.0",
+    "babel-runtime": "^6.23.0",
+    "doubt": "^0.26.0",
+    "falzy": "^0.19.0",
+    "protype": "^0.21.0",
+    "raze": "^0.29.0",
+    "truly": "^0.18.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "source-map-loader": "^0.2.1",
+    "webpack": "^2.5.1"
+  }
+}

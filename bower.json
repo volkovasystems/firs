@@ -1,0 +1,35 @@
+{
+  "name": "firs",
+  "version": "0.0.0",
+  "description": "Get the first non-falsy element of array.",
+  "main": "firs.deploy.js",
+  "support": "firs.support.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "get",
+    "first",
+    "non-falsy",
+    "element",
+    "array",
+    "firs"
+  ],
+  "homepage": "https://github.com/volkovasystems/firs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "arid": "^0.25.0",
+    "doubt": "^0.26.0",
+    "falzy": "^0.19.0",
+    "protype": "^0.21.0",
+    "raze": "^0.29.0",
+    "truly": "^0.18.0"
+  }
+}
