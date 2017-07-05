@@ -3,7 +3,6 @@ babel-runtime \
 arid \
 doubt \
 falzy \
-protype \
 raze \
 truly \
 --save && \
@@ -19,7 +18,6 @@ bower install \
 arid \
 doubt \
 falzy \
-protype \
 raze \
 truly \
 --save \

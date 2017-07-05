@@ -37,7 +37,7 @@
               			"eMail": "richeve.bebedor@gmail.com",
               			"contributors": [
               				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-              				"Vinse Vinalon"
+              				"Vinse Vinalon <vinsevinalon@gmail.com>"
               			],
               			"repository": "https://github.com/volkovasystems/firs.git",
               			"test": "firs-test.js",
@@ -58,7 +58,6 @@
               			"arid": "arid",
               			"doubt": "doubt",
               			"falzy": "falzy","
-              			"protype": "protype",
               			"raze": "raze",
               			"truly": "truly"
               		}
@@ -68,7 +67,6 @@
 var arid = require("arid");
 var doubt = require("doubt");
 var falzy = require("falzy");
-var protype = require("protype");
 var raze = require("raze");
 var truly = require("truly");
 
