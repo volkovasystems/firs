@@ -1,7 +1,5 @@
 yarn add \
 babel-runtime \
-arid \
-doubt \
 falzy \
 raze \
 truly \
@@ -15,8 +13,6 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-arid \
-doubt \
 falzy \
 raze \
 truly \

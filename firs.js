@@ -49,14 +49,13 @@
 		Get the first non-falsy element of array.
 
 		This should always return non-falsy element.
+
 		If the array is empty or is likely to return a falsy element
 			then this will throw an error.
 	@end-module-documentation
 
 	@include:
 		{
-			"arid": "arid",
-			"doubt": "doubt",
 			"falzy": "falzy","
 			"raze": "raze",
 			"truly": "truly"
@@ -64,8 +63,6 @@
 	@end-include
 */
 
-const arid = require( "arid" );
-const doubt = require( "doubt" );
 const falzy = require( "falzy" );
 const raze = require( "raze" );
 const truly = require( "truly" );
@@ -79,19 +76,13 @@ const firs = function firs( array ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( array ) ){
+	let element = raze( array ).filter( truly )[ 0 ];
+
+	if( falzy( element ) ){
 		throw new Error( "invalid array" );
 	}
 
-	if( !doubt( array, AS_ARRAY ) ){
-		return array;
-	}
-
-	if( arid( array ) ){
-		throw new Error( "empty array" );
-	}
-
-	return raze( array ).filter( truly )[ 0 ];
+	return element;
 };
 
 module.exports = firs;
