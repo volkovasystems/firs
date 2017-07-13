@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>firs unit test</title>
 
-		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Firs QUnit Example</title>
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+	<script src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+	<script type="application/javascript" src="./firs.deploy.js"></script>
+</head>
 
-		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<script>
+		QUnit.test("ok test", function (assert) {
+			
+			assert.equal( firs( [ 1, 2, 3 ] ), 1, "should return 1" );
 
-		<script type="application/javascript" src="./firs.deploy.js"></script>
-	</head>
+			assert.equal( firs( [ false, true ] ), false, "should return false" );
 
-	<body>
-		<div id="qunit"></div>
+			assert.equal( firs( [ "", "yeah", { } ] ), "yeah", "should return 'yeah'" );
 
-		<div id="qunit-fixture"></div>
+			assert.equal( firs( [ null, undefined, 2 ] ), 2, "should return 2" );
 
-		<script type="application/javascript">
-			QUnit.test( "firs unit test", function( assert ) {
+			assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello" ), "should be equal" );
 
-				assert.equal( firs( [ 1, 2, 3 ] ), 1, "should return 1" );
+			let test = function test( ){ return "test" };
+			class ClassA{
+				constructor( ){ }
+				method( ){ return "hello"; }
+			}
 
-				assert.equal( firs( [ false, true ] ), false, "should return false" );
+			let testA = new ClassA( );
+			assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA, "should be equal" );
 
-				assert.equal( firs( [ "", "yeah", { } ] ), "yeah", "should return 'yeah'" );
+		});
+	</script>
+</body>
 
-				assert.equal( firs( [ null, undefined, 2 ] ), 2, "should return 2" );
-
-				assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello" ), "should be equal" );
-
-				let test = function test( ){ return "test" };
-				class ClassA{
-					constructor( ){ }
-					method( ){ return "hello"; }
-				}
-
-				let testA = new ClassA( );
-				assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA, "should be equal" );
-
-			} );
-		</script>
-	</body>
 </html>
