@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>firs unit test</title>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Firs QUnit Example</title>
-	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
-	<script src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-	<script type="application/javascript" src="./firs.deploy.js"></script>
-</head>
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
 
-<body>
-	<div id="qunit"></div>
-	<div id="qunit-fixture"></div>
-	<script>
-		QUnit.test("ok test", function (assert) {
-			
-			assert.equal( firs( [ 1, 2, 3 ] ), 1, "should return 1" );
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
 
-			assert.equal( firs( [ false, true ] ), false, "should return false" );
+		<script type="application/javascript" src="./firs.deploy.js"></script>
+	</head>
 
-			assert.equal( firs( [ "", "yeah", { } ] ), "yeah", "should return 'yeah'" );
+	<body>
+		<div id="qunit"></div>
 
-			assert.equal( firs( [ null, undefined, 2 ] ), 2, "should return 2" );
+		<div id="qunit-fixture"></div>
 
-			assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello" ), "should be equal" );
+		<script type="application/javascript">
+			QUnit.test( "firs unit test", function( assert ) {
 
-			let test = function test( ){ return "test" };
-			class ClassA{
-				constructor( ){ }
-				method( ){ return "hello"; }
-			}
+				assert.equal( firs( [ 1, 2, 3 ] ), 1, "should return 1" );
 
-			let testA = new ClassA( );
-			assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA, "should be equal" );
+				assert.equal( firs( [ false, true ] ), false, "should return false" );
 
-		});
-	</script>
-</body>
+				assert.equal( firs( [ "", "yeah", { } ] ), "yeah", "should return 'yeah'" );
 
+				assert.equal( firs( [ null, undefined, 2 ] ), 2, "should return 2" );
+
+				assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello" ), "should be equal to Symbol.for( 'hello' )" );
+
+				let test = function test( ){ return "test" };
+				class ClassA{
+					constructor( ){ }
+					method( ){ return "hello"; }
+				}
+
+				let testA = new ClassA( );
+				assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA, "should be equal to instance of classA" );
+
+			} );
+		</script>
+	</body>
 </html>

@@ -10,7 +10,7 @@ assert.equal( firs( [ "", "yeah", { } ] ), "yeah", "should return 'yeah'" );
 
 assert.equal( firs( [ null, undefined, 2 ] ), 2, "should return 2" );
 
-assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello" ), "should be equal" );
+assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello" ), "should be equal to Symbol.for( 'hello' )" );
 
 let test = function test( ){ return "test" };
 class ClassA{
@@ -19,6 +19,6 @@ class ClassA{
 }
 
 let testA = new ClassA( );
-assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA, "should be equal" );
+assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA, "should be equal to instance of classA" );
 
 console.log( "ok" );
