@@ -5,9 +5,9 @@
     "passes": 6,
     "pending": 0,
     "failures": 0,
-    "start": "2017-07-30T17:52:49.795Z",
-    "end": "2017-07-30T17:52:49.800Z",
-    "duration": 5
+    "start": "2017-08-17T17:52:48.149Z",
+    "end": "2017-08-17T17:52:48.163Z",
+    "duration": 14
   },
   "tests": [
     {
@@ -48,7 +48,7 @@
     {
       "title": "should be equal",
       "fullTitle": "firs \"firs( [ null, undefined, testA, test ] )\" should be equal",
-      "duration": 0,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     }
@@ -94,7 +94,7 @@
     {
       "title": "should be equal",
       "fullTitle": "firs \"firs( [ null, undefined, testA, test ] )\" should be equal",
-      "duration": 0,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     }
