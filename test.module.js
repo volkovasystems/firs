@@ -55,7 +55,7 @@
 	@end-include
 */
 
-const assert = require( "assert" );
+const assert = require( "should" );
 
 //: @server:
 const firs = require( "./firs.js" );
@@ -72,9 +72,9 @@ const path = require( "path" );
 //: @server:
 
 describe( "firs", ( ) => {
-	
+
 	describe( "`firs( [ 1, 2, 3 ] )`", ( ) => {
-		it( "should return 1", ( ) => {
+		it( "should be equal to 1", ( ) => {
 
 			assert.equal( firs( [ 1, 2, 3 ] ), 1 );
 
@@ -82,39 +82,40 @@ describe( "firs", ( ) => {
 	} );
 
 	describe( "`firs( [ false, true ] )`", ( ) => {
-		it( "should return false", ( ) => {
+		it( "should be equal to false", ( ) => {
 
 			assert.equal( firs( [ false, true ] ), false );
 
 		} );
 	} );
 
-	describe( `"firs( [ "", "yeah", { } ] )"`, ( ) => {
-		it( "should return 'yeah'" , ( ) => {
+	describe( "`firs( [ '', 'yeah', { } ] )`", ( ) => {
+		it( "should be equal to 'yeah'" , ( ) => {
 
 			assert.equal( firs( [ "", "yeah", { } ] ), "yeah" );
 
 		} );
 	} );
 
-	describe( `"firs( [ null, undefined, 2 ] )"`, ( ) => {
-		it( "should return 2" , ( ) => {
+	describe( "`firs( [ null, undefined, 2 ] )`", ( ) => {
+		it( "should be equal to 2" , ( ) => {
 
 			assert.equal( firs( [ null, undefined, 2 ] ), 2 );
 
 		} );
 	} );
 
-	describe( `"firs( [ null, Symbol.for( "hello" ), true ] )"`, ( ) => {
-		it( "should be equal", ( ) => {
+	describe( "`firs( [ null, Symbol.for( 'hello' ), true ] )`", ( ) => {
+		it( "should be equal to Symbol.for( 'hello' )", ( ) => {
 
-			assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello") );
+			assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello" ) );
 
 		} );
 	} );
 
-	describe( `"firs( [ null, undefined, testA, test ] )"`, ( ) => {
-		it( "should be equal", ( ) => {
+	describe( "`firs( [ null, undefined, testA, test ] )`", ( ) => {
+		it( "should be equal to instance of classA", ( ) => {
+
 			let test = function test( ){ return "test" };
 			class ClassA{
 				constructor( ){ }
@@ -122,77 +123,20 @@ describe( "firs", ( ) => {
 			}
 
 			let testA = new ClassA( );
+
 			assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA );
 
 		} );
 	} );
-	
+
 } );
 
 
 //: @end-server
 
 
-//: @client: 
+//: @client:
 
-
-describe( "firs", ( ) => {
-	
-	describe( "`firs( [ 1, 2, 3 ] )`", ( ) => {
-		it( "should return 1", ( ) => {
-
-			assert.equal( firs( [ 1, 2, 3 ] ), 1 );
-
-		} );
-	} );
-
-	describe( "`firs( [ false, true ] )`", ( ) => {
-		it( "should return false", ( ) => {
-
-			assert.equal( firs( [ false, true ] ), false );
-
-		} );
-	} );
-
-	describe( `"firs( [ "", "yeah", { } ] )"`, ( ) => {
-		it( "should return 'yeah'" , ( ) => {
-
-			assert.equal( firs( [ "", "yeah", { } ] ), "yeah" );
-
-		} );
-	} );
-
-	describe( `"firs( [ null, undefined, 2 ] )"`, ( ) => {
-		it( "should return 2" , ( ) => {
-
-			assert.equal( firs( [ null, undefined, 2 ] ), 2 );
-
-		} );
-	} );
-
-	describe( `"firs( [ null, Symbol.for( "hello" ), true ] )"`, ( ) => {
-		it( "should be equal", ( ) => {
-
-			assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello") );
-
-		} );
-	} );
-
-	describe( `"firs( [ null, undefined, testA, test ] )"`, ( ) => {
-		it( "should be equal", ( ) => {
-			let test = function test( ){ return "test" };
-			class ClassA{
-				constructor( ){ }
-				method( ){ return "hello"; }
-			}
-
-			let testA = new ClassA( );
-			assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA );
-
-		} );
-	} );
-	
-} );
 
 
 //: @end-client
