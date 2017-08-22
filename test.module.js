@@ -113,7 +113,7 @@ describe( "firs", ( ) => {
 		} );
 	} );
 
-	describe( "`firs with array containing null, undefined, class and function`", ( ) => {
+	describe( "`firs with array containing null, undefined, instance of class and function`", ( ) => {
 		it( "should be equal to instance of classA", ( ) => {
 
 			let test = function test( ){ return "test" };
@@ -131,19 +131,185 @@ describe( "firs", ( ) => {
 
 } );
 
-
 //: @end-server
 
 
 //: @client:
 
+describe( "firs", ( ) => {
 
+	describe( "`firs( [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to 1", ( ) => {
+
+			assert.equal( firs( [ 1, 2, 3 ] ), 1 );
+
+		} );
+	} );
+
+	describe( "`firs( [ false, true ] )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+
+			assert.equal( firs( [ false, true ] ), false );
+
+		} );
+	} );
+
+	describe( "`firs( [ '', 'yeah', { } ] )`", ( ) => {
+		it( "should be equal to 'yeah'" , ( ) => {
+
+			assert.equal( firs( [ "", "yeah", { } ] ), "yeah" );
+
+		} );
+	} );
+
+	describe( "`firs( [ null, undefined, 2 ] )`", ( ) => {
+		it( "should be equal to 2" , ( ) => {
+
+			assert.equal( firs( [ null, undefined, 2 ] ), 2 );
+
+		} );
+	} );
+
+	describe( "`firs( [ null, Symbol.for( 'hello' ), true ] )`", ( ) => {
+		it( "should be equal to Symbol.for( 'hello' )", ( ) => {
+
+			assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello" ) );
+
+		} );
+	} );
+
+	describe( "`firs with array containing null, undefined, instance of class and function`", ( ) => {
+		it( "should be equal to instance of classA", ( ) => {
+
+			let test = function test( ){ return "test" };
+			class ClassA{
+				constructor( ){ }
+				method( ){ return "hello"; }
+			}
+
+			let testA = new ClassA( );
+
+			assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA );
+
+		} );
+	} );
+
+} );
 
 //: @end-client
 
 
 //: @bridge:
 
+describe( "firs", ( ) => {
 
+	describe( "`firs( [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to 1", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return firs( [ 1, 2, 3 ] );
+				}
+
+			).value;
+
+			assert.equal( result, 1 );
+
+		} );
+	} );
+
+	describe( "`firs( [ false, true ] )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return firs( [ false, true ] );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+
+		} );
+	} );
+
+	describe( "`firs( [ '', 'yeah', { } ] )`", ( ) => {
+		it( "should be equal to 'yeah'" , ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return firs( [ "", "yeah", { } ] );
+				}
+
+			).value;
+
+			assert.equal( result, "yeah" );
+
+		} );
+	} );
+
+	describe( "`firs( [ null, undefined, 2 ] )`", ( ) => {
+		it( "should be equal to 2" , ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return firs( [ null, undefined, 2 ] );
+				}
+
+			).value;
+
+			assert.equal( result, 2 );
+
+		} );
+	} );
+
+	describe( "`firs( [ null, Symbol.for( 'hello' ), true ] )`", ( ) => {
+		it( "should be equal to Symbol.for( 'hello' )", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return firs( [ null, Symbol.for( "hello" ), true ] );
+				}
+
+			).value;
+
+			assert.equal( result, Symbol.for( "hello" ) );
+
+		} );
+	} );
+
+	describe( "`firs with array containing null, undefined, instance of class and function`", ( ) => {
+		it( "should be equal to instance of classA", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+
+					let test = function test( ){ return "test" };
+
+					class ClassA{
+						constructor( ){ }
+						method( ){ return "hello"; }
+					}
+
+					let testA = new ClassA( );
+
+					return firs( [ null, undefined, testA, test ] );
+
+				}
+
+			).value;
+
+			assert.equal( result, testA );
+
+		} );
+	} );
+
+} );
 
 //: @end-bridge
