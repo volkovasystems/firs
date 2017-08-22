@@ -203,6 +203,8 @@ describe( "firs", ( ) => {
 
 describe( "firs", ( ) => {
 
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
 	describe( "`firs( [ 1, 2, 3 ] )`", ( ) => {
 		it( "should be equal to 1", ( ) => {
 
@@ -269,7 +271,7 @@ describe( "firs", ( ) => {
 
 	describe( "`firs( [ null, Symbol.for( 'hello' ), true ] )`", ( ) => {
 		it( "should be equal to Symbol.for( 'hello' )", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -277,7 +279,7 @@ describe( "firs", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.equal( result, Symbol.for( "hello" ) );
 
 		} );
@@ -285,7 +287,7 @@ describe( "firs", ( ) => {
 
 	describe( "`firs with array containing null, undefined, instance of class and function`", ( ) => {
 		it( "should be equal to instance of classA", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -304,7 +306,7 @@ describe( "firs", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.equal( result, testA );
 
 		} );
