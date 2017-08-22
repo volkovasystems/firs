@@ -1,102 +1,88 @@
 {
-  "stats": {
-    "suites": 7,
-    "tests": 6,
-    "passes": 6,
-    "pending": 0,
-    "failures": 0,
-    "start": "2017-08-17T17:52:48.149Z",
-    "end": "2017-08-17T17:52:48.163Z",
-    "duration": 14
-  },
-  "tests": [
-    {
-      "title": "should return 1",
-      "fullTitle": "firs `firs( [ 1, 2, 3 ] )` should return 1",
-      "duration": 1,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should return false",
-      "fullTitle": "firs `firs( [ false, true ] )` should return false",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should return 'yeah'",
-      "fullTitle": "firs \"firs( [ \"\", \"yeah\", { } ] )\" should return 'yeah'",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should return 2",
-      "fullTitle": "firs \"firs( [ null, undefined, 2 ] )\" should return 2",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be equal",
-      "fullTitle": "firs \"firs( [ null, Symbol.for( \"hello\" ), true ] )\" should be equal",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be equal",
-      "fullTitle": "firs \"firs( [ null, undefined, testA, test ] )\" should be equal",
-      "duration": 1,
-      "currentRetry": 0,
-      "err": {}
-    }
-  ],
-  "pending": [],
-  "failures": [],
-  "passes": [
-    {
-      "title": "should return 1",
-      "fullTitle": "firs `firs( [ 1, 2, 3 ] )` should return 1",
-      "duration": 1,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should return false",
-      "fullTitle": "firs `firs( [ false, true ] )` should return false",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should return 'yeah'",
-      "fullTitle": "firs \"firs( [ \"\", \"yeah\", { } ] )\" should return 'yeah'",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should return 2",
-      "fullTitle": "firs \"firs( [ null, undefined, 2 ] )\" should return 2",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be equal",
-      "fullTitle": "firs \"firs( [ null, Symbol.for( \"hello\" ), true ] )\" should be equal",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be equal",
-      "fullTitle": "firs \"firs( [ null, undefined, testA, test ] )\" should be equal",
-      "duration": 1,
-      "currentRetry": 0,
-      "err": {}
-    }
-  ]
+	"stats": {
+		"suites": 6,
+		"tests": 5,
+		"passes": 5,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-22T07:22:03.999Z",
+		"end": "2017-08-22T07:22:04.005Z",
+		"duration": 6
+	},
+	"tests": [
+		{
+			"title": "should be equal to 1",
+			"fullTitle": "firs `firs( [ 1, 2, 3 ] )` should be equal to 1",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "firs `firs( [ false, true ] )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 'yeah'",
+			"fullTitle": "firs `firs( [ '', 'yeah', { } ] )` should be equal to 'yeah'",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 2",
+			"fullTitle": "firs `firs( [ null, undefined, 2 ] )` should be equal to 2",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to Symbol.for( 'hello' )",
+			"fullTitle": "firs `firs( [ null, Symbol.for( 'hello' ), true ] )` should be equal to Symbol.for( 'hello' )",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should be equal to 1",
+			"fullTitle": "firs `firs( [ 1, 2, 3 ] )` should be equal to 1",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "firs `firs( [ false, true ] )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 'yeah'",
+			"fullTitle": "firs `firs( [ '', 'yeah', { } ] )` should be equal to 'yeah'",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 2",
+			"fullTitle": "firs `firs( [ null, undefined, 2 ] )` should be equal to 2",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to Symbol.for( 'hello' )",
+			"fullTitle": "firs `firs( [ null, Symbol.for( 'hello' ), true ] )` should be equal to Symbol.for( 'hello' )",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
 }

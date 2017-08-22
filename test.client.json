@@ -1,0 +1,212 @@
+{
+	"state": {
+		"passed": 5,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-22T07:22:05.096Z",
+	"end": "2017-08-22T07:22:09.904Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "firs",
+			"duration": 0,
+			"start": "2017-08-22T07:22:09.485Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "firs",
+			"duration": 243,
+			"start": "2017-08-22T07:22:09.485Z",
+			"end": "2017-08-22T07:22:09.728Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-22T07:22:09.487Z",
+					"end": "2017-08-22T07:22:09.487Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to 1"
+				},
+				{
+					"start": "2017-08-22T07:22:09.573Z",
+					"end": "2017-08-22T07:22:09.573Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to 1"
+				},
+				{
+					"start": "2017-08-22T07:22:09.574Z",
+					"end": "2017-08-22T07:22:09.574Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-08-22T07:22:09.614Z",
+					"end": "2017-08-22T07:22:09.614Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-08-22T07:22:09.615Z",
+					"end": "2017-08-22T07:22:09.615Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to 'yeah'"
+				},
+				{
+					"start": "2017-08-22T07:22:09.652Z",
+					"end": "2017-08-22T07:22:09.653Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to 'yeah'"
+				},
+				{
+					"start": "2017-08-22T07:22:09.653Z",
+					"end": "2017-08-22T07:22:09.653Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to 2"
+				},
+				{
+					"start": "2017-08-22T07:22:09.690Z",
+					"end": "2017-08-22T07:22:09.690Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to 2"
+				},
+				{
+					"start": "2017-08-22T07:22:09.691Z",
+					"end": "2017-08-22T07:22:09.691Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to Symbol.for( 'hello' )"
+				},
+				{
+					"start": "2017-08-22T07:22:09.728Z",
+					"end": "2017-08-22T07:22:09.728Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "firs",
+					"associatedTest": "should be equal to Symbol.for( 'hello' )"
+				},
+				{
+					"start": "2017-08-22T07:22:09.728Z",
+					"end": "2017-08-22T07:22:09.728Z",
+					"duration": 0,
+					"title": "\"after all\" hook",
+					"associatedSuite": "firs"
+				}
+			]
+		},
+		{
+			"name": "`firs( [ 1, 2, 3 ] )`",
+			"duration": 88,
+			"start": "2017-08-22T07:22:09.486Z",
+			"end": "2017-08-22T07:22:09.574Z",
+			"tests": [
+				{
+					"name": "should be equal to 1",
+					"start": "2017-08-22T07:22:09.486Z",
+					"end": "2017-08-22T07:22:09.573Z",
+					"duration": 87,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`firs( [ false, true ] )`",
+			"duration": 41,
+			"start": "2017-08-22T07:22:09.574Z",
+			"end": "2017-08-22T07:22:09.615Z",
+			"tests": [
+				{
+					"name": "should be equal to false",
+					"start": "2017-08-22T07:22:09.574Z",
+					"end": "2017-08-22T07:22:09.614Z",
+					"duration": 40,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`firs( [ '', 'yeah', { } ] )`",
+			"duration": 38,
+			"start": "2017-08-22T07:22:09.615Z",
+			"end": "2017-08-22T07:22:09.653Z",
+			"tests": [
+				{
+					"name": "should be equal to 'yeah'",
+					"start": "2017-08-22T07:22:09.615Z",
+					"end": "2017-08-22T07:22:09.652Z",
+					"duration": 37,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`firs( [ null, undefined, 2 ] )`",
+			"duration": 37,
+			"start": "2017-08-22T07:22:09.653Z",
+			"end": "2017-08-22T07:22:09.690Z",
+			"tests": [
+				{
+					"name": "should be equal to 2",
+					"start": "2017-08-22T07:22:09.653Z",
+					"end": "2017-08-22T07:22:09.690Z",
+					"duration": 37,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`firs( [ null, Symbol.for( 'hello' ), true ] )`",
+			"duration": 37,
+			"start": "2017-08-22T07:22:09.691Z",
+			"end": "2017-08-22T07:22:09.728Z",
+			"tests": [
+				{
+					"name": "should be equal to Symbol.for( 'hello' )",
+					"start": "2017-08-22T07:22:09.691Z",
+					"end": "2017-08-22T07:22:09.728Z",
+					"duration": 37,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}
