@@ -113,22 +113,6 @@ describe( "firs", ( ) => {
 		} );
 	} );
 
-	describe( "`firs with array containing null, undefined, instance of class and function`", ( ) => {
-		it( "should be equal to instance of classA", ( ) => {
-
-			let test = function test( ){ return "test" };
-			class ClassA{
-				constructor( ){ }
-				method( ){ return "hello"; }
-			}
-
-			let testA = new ClassA( );
-
-			assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA );
-
-		} );
-	} );
-
 } );
 
 //: @end-server
@@ -174,22 +158,6 @@ describe( "firs", ( ) => {
 		it( "should be equal to Symbol.for( 'hello' )", ( ) => {
 
 			assert.equal( firs( [ null, Symbol.for( "hello" ), true ] ), Symbol.for( "hello" ) );
-
-		} );
-	} );
-
-	describe( "`firs with array containing null, undefined, instance of class and function`", ( ) => {
-		it( "should be equal to instance of classA", ( ) => {
-
-			let test = function test( ){ return "test" };
-			class ClassA{
-				constructor( ){ }
-				method( ){ return "hello"; }
-			}
-
-			let testA = new ClassA( );
-
-			assert.deepEqual( firs( [ null, undefined, testA, test ] ), testA );
 
 		} );
 	} );
@@ -275,39 +243,12 @@ describe( "firs", ( ) => {
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					return firs( [ null, Symbol.for( "hello" ), true ] );
+					return firs( [ null, Symbol.for( "hello" ), true ] ).toString( );
 				}
 
 			).value;
 			//: @end-ignore
-			assert.equal( result, Symbol.for( "hello" ) );
-
-		} );
-	} );
-
-	describe( "`firs with array containing null, undefined, instance of class and function`", ( ) => {
-		it( "should be equal to instance of classA", ( ) => {
-			//: @ignore:
-			let result = browser.url( bridgeURL ).execute(
-
-				function( ){
-
-					let test = function test( ){ return "test" };
-
-					class ClassA{
-						constructor( ){ }
-						method( ){ return "hello"; }
-					}
-
-					let testA = new ClassA( );
-
-					return firs( [ null, undefined, testA, test ] );
-
-				}
-
-			).value;
-			//: @end-ignore
-			assert.equal( result, testA );
+			assert.equal( result, Symbol.for( "hello" ).toString( ) );
 
 		} );
 	} );
