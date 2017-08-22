@@ -113,7 +113,7 @@ describe( "firs", ( ) => {
 		} );
 	} );
 
-	describe( "`firs( [ null, undefined, testA, test ] )`", ( ) => {
+	describe( "`firs with array containing null, undefined, class and function`", ( ) => {
 		it( "should be equal to instance of classA", ( ) => {
 
 			let test = function test( ){ return "test" };
